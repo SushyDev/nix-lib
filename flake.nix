@@ -9,8 +9,9 @@
 		let
 		in
 		{
-			platforms = [ "aarch64-darwin" "aarch64-linux" "x86_64-linux" ];
+			platforms = {
+				default = [ "aarch64-darwin" "aarch64-linux" "x86_64-linux" ];
+			};
 			forPlatforms = platforms: nixpkgs.lib.genAttrs platforms;
-			forAllPlatforms = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
 		};
 }
